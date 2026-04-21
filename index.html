@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Hospitality | Professional Training & Certification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1e293b;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-svg {
+            width: 48px;
+            height: 48px;
+        }
+        .brand-name h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            line-height: 1.2;
+        }
+        .brand-name p {
+            font-size: 0.7rem;
+            color: #c2410c;
+            letter-spacing: 1px;
+        }
+        .nav-links a {
+            margin-left: 28px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e3a5f;
+            transition: 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #c2410c;
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 4px;
+        }
+        .btn-primary {
+            background: #facc15;
+            color: #1e3a5f;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #eab308;
+            transform: scale(1.02);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #facc15;
+            color: #1e3a5f;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 32px;
+            opacity: 0.9;
+        }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+        .hero-badges span {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Section */
+        section {
+            padding: 70px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 48px;
+            color: #1e3a5f;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #facc15;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        /* Course Cards Grid */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .course-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .course-header {
+            background: #1e3a5f;
+            color: white;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .course-content {
+            padding: 20px;
+        }
+        .week-toggle {
+            background: #f1f5f9;
+            border-radius: 12px;
+            margin: 12px 0;
+            cursor: pointer;
+            padding: 12px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            transition: 0.2s;
+        }
+        .week-toggle:hover {
+            background: #e2e8f0;
+        }
+        .week-details {
+            display: none;
+            padding-left: 16px;
+            margin-top: 8px;
+            list-style: none;
+        }
+        .week-details li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+        .week-details li::before {
+            content: "✓";
+            color: #facc15;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .show {
+            display: block;
+        }
+
+        /* Why Us */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .why-item {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .why-item .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 16px;
+            font-family: inherit;
+        }
+        .contact-info p {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links a {
+                margin: 0 12px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-container">
+        <div class="logo-area">
+            <div class="logo-svg">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" stroke="#1e3a5f" stroke-width="2" fill="white"/>
+                    <path d="M24 8 L28 18 L38 18 L30 24 L34 34 L24 28 L14 34 L18 24 L10 18 L20 18 L24 8Z" fill="#facc15" stroke="#c2410c" stroke-width="1.2"/>
+                    <text x="24" y="42" font-size="8" text-anchor="middle" fill="#1e3a5f" font-weight="bold">EST</text>
+                </svg>
+            </div>
+            <div class="brand-name">
+                <h1>ELITE HOSPITALITY</h1>
+                <p>academy of excellence</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="btn-primary" style="padding: 8px 20px;">Enroll Now</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container">
+            <h2>Launch Your Hospitality Career</h2>
+            <p>Professional Training & Certification — 1‑Month intensive courses with 100% placement assistance</p>
+            <a href="#contact" class="btn-primary" style="background: #facc15; color:#1e3a5f;">Get Started</a>
+            <div class="hero-badges">
+                <span>✔ Industry Experts</span>
+                <span>✔ Hands-on Labs</span>
+                <span>✔ Global Certification</span>
+                <span>✔ Placement Assistance</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <h2 class="section-title">Our 1‑Month Professional Courses</h2>
+            <div class="courses-grid">
+                <!-- Front Office -->
+                <div class="course-card">
+                    <div class="course-header">🏨 FRONT OFFICE & RECEPTION</div>
+                    <div class="course-content">
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 1: Guest Relations ▼</div>
+                        <ul class="week-details">
+                            <li>Professional telephone & email etiquette</li>
+                            <li>Handling inquiries & complaints</li>
+                            <li>First impressions & body language</li>
+                        </ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 2: Reservations & PMS ▼</div>
+                        <ul class="week-details">
+                            <li>OTA, direct & walk-in booking process</li>
+                            <li>Hands-on PMS (check-in/out)</li>
+                            <li>Room allocation & upgrades</li>
+                        </ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 3: Billing & Audit ▼</div>
+                        <ul class="week-details">
+                            <li>Night audit basics & payment handling</li>
+                            <li>Coordination with housekeeping/F&B</li>
+                        </ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 4: Problem-solving & Roleplay ▼</div>
+                        <ul class="week-details">
+                            <li>Overbooking & service recovery scenarios</li>
+                            <li>Final assessment & certification</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Housekeeping -->
+                <div class="course-card">
+                    <div class="course-header">🧼 PROFESSIONAL HOUSEKEEPING</div>
+                    <div class="course-content">
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 1: Hygiene & Sanitization ▼</div>
+                        <ul class="week-details"><li>5-star cleaning protocols & agents</li><li>Deep cleaning rooms & public areas</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 2: Room Management ▼</div>
+                        <ul class="week-details"><li>Bed making, turndown service</li><li>Room inspection checklist & mini-bar</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 3: Laundry & Linen ▼</div>
+                        <ul class="week-details"><li>Sorting, washing, ironing, par levels</li><li>Stain removal techniques</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 4: Safety & Coordination ▼</div>
+                        <ul class="week-details"><li>Lost & found, biohazard safety</li><li>Coordination with maintenance</li></ul>
+                    </div>
+                </div>
+                <!-- F&B -->
+                <div class="course-card">
+                    <div class="course-header">🍽️ RESTAURANT & F&B TEAM</div>
+                    <div class="course-content">
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 1: Dining Etiquette ▼</div>
+                        <ul class="week-details"><li>Table setup, napkin folding, serving styles</li><li>Dietary requests & order taking</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 2: F&B Knowledge ▼</div>
+                        <ul class="week-details"><li>Menu engineering, upselling</li><li>Wine pairing basics (red/white/sparkling)</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 3: Kitchen Coordination ▼</div>
+                        <ul class="week-details"><li>Ticket system, buffet replenishment</li><li>HACCP & food hygiene</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 4: Guest Experience & POS ▼</div>
+                        <ul class="week-details"><li>Complaint handling, service recovery</li><li>POS training & final simulation</li></ul>
+                    </div>
+                </div>
+                <!-- Operations -->
+                <div class="course-card">
+                    <div class="course-header">📊 OPERATIONS MANAGEMENT</div>
+                    <div class="course-content">
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 1: Staff Coordination ▼</div>
+                        <ul class="week-details"><li>Duty rosters, shift management</li><li>Inter-department communication & leadership</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 2: Quality Assurance ▼</div>
+                        <ul class="week-details"><li>SOPs, mystery audits, guest feedback analysis</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 3: Budget & Resources ▼</div>
+                        <ul class="week-details"><li>Cost control, inventory & vendor management</li><li>Basic financial reports</li></ul>
+                        <div class="week-toggle" onclick="toggleWeek(this)">Week 4: Guest Satisfaction Metrics ▼</div>
+                        <ul class="week-details"><li>NPS, online review management</li><li>Crisis handling & operations improvement project</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section style="background: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Why Train With Us?</h2>
+            <div class="why-grid">
+                <div class="why-item"><div class="emoji">🏆</div><h3>Industry Experts</h3><p>10+ years experience</p></div>
+                <div class="why-item"><div class="emoji">🛠️</div><h3>Hands-on Practical</h3><p>Simulated hotel labs</p></div>
+                <div class="why-item"><div class="emoji">🌍</div><h3>Global Certification</h3><p>Recognized worldwide</p></div>
+                <div class="why-item"><div class="emoji">💼</div><h3>100% Placement</h3><p>Hotels, resorts, cruises</p></div>
+                <div class="why-item"><div class="emoji">📅</div><h3>Flexible Batches</h3><p>Weekdays / Weekends</p></div>
+                <div class="why-item"><div class="emoji">🎯</div><h3>Career Guidance</h3><p>Interview preparation</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Enroll Today – Limited Seats</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>📞 <strong>+91-8369015250</strong></p>
+                    <p>🌐 <strong>www.elitehospitality.in.net</strong></p>
+                    <p>📍 <strong>Shop no.4, Azmi Nagar, Near Himgiri Bldg, Gate No.7, Malwani, Malad West, Mumbai - 400095</strong></p>
+                    <p style="margin-top: 20px;">Batch start: Every 1st & 15th of month</p>
+                    <div style="margin-top: 30px; background:#e2e8f0; border-radius: 20px; padding: 20px; text-align: center;">
+                        <iframe width="100%" height="200" style="border:0; border-radius: 12px;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Malwani%2C%20Malad%20West%2C%20Mumbai&z=14&output=embed"></iframe>
+                        <small>📍 Located in Malad West, Mumbai</small>
+                    </div>
+                </div>
+                <div>
+                    <form action="#" method="post">
+                        <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                        <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+                        <div class="form-group"><input type="tel" placeholder="Mobile Number" required></div>
+                        <div class="form-group">
+                            <select>
+                                <option>Select Course</option>
+                                <option>Front Office & Reception</option>
+                                <option>Professional Housekeeping</option>
+                                <option>Restaurant & F&B Team</option>
+                                <option>Operations Management</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><textarea rows="3" placeholder="Message"></textarea></div>
+                        <button type="submit" class="btn-primary">Request Callback</button>
+                    </form>
+                    <p class="small-note" style="margin-top: 16px;">* We’ll contact you within 24 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Elite Hospitality Academy — Professional Training & Certification</p>
+        <p style="margin-top: 8px;">📍 Mumbai | 📞 +91-8369015250 | www.elitehospitality.in.net</p>
+    </div>
+</footer>
+
+<script>
+    function toggleWeek(element) {
+        let details = element.nextElementSibling;
+        if (details.classList.contains('week-details')) {
+            details.classList.toggle('show');
+            let text = element.innerText;
+            if (details.classList.contains('show')) {
+                element.innerText = text.replace('▼', '▲');
+            } else {
+                element.innerText = text.replace('▲', '▼');
+            }
+        }
+    }
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
