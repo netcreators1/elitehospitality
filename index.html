@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="3u0UX0KVXYA0W6AWpih9KZYa2a1ihmKDQp0z1-JF4Es" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V2KJ40Q40J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V2KJ40Q40J');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- GOOGLE SITE VERIFICATION -->
+    <meta name="google-site-verification" content="3u0UX0KVXYA0W6AWpih9KZYa2a1ihmKDQp0z1-JF4Es" />
+    
+    <!-- GOOGLE ANALYTICS (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2KJ40Q40J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V2KJ40Q40J');
+    </script>
+
     <title>Elite Hospitality | Professional Training & Certification</title>
     <style>
         * {
@@ -55,9 +58,9 @@
             align-items: center;
             gap: 12px;
         }
-        .logo-svg {
-            width: 48px;
+        .logo-area img {
             height: 48px;
+            width: auto;
         }
         .brand-name h1 {
             font-size: 1.5rem;
@@ -70,17 +73,23 @@
             color: #c2410c;
             letter-spacing: 1px;
         }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
         .nav-links a {
-            margin-left: 28px;
             text-decoration: none;
             font-weight: 600;
             color: #1e3a5f;
             transition: 0.2s;
+            padding: 8px 12px;
         }
         .nav-links a:hover, .nav-links a.active {
             color: #c2410c;
             border-bottom: 2px solid #facc15;
-            padding-bottom: 4px;
+            padding-bottom: 6px;
         }
         .btn-primary {
             background: #facc15;
@@ -93,6 +102,7 @@
             transition: 0.2s;
             border: none;
             cursor: pointer;
+            font-size: 0.95rem;
         }
         .btn-primary:hover {
             background: #eab308;
@@ -259,12 +269,14 @@
             border: 1px solid #cbd5e1;
             border-radius: 16px;
             font-family: inherit;
+            font-size: 1rem;
         }
         .contact-info p {
             margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 12px;
+            word-break: break-word;
         }
 
         /* Footer */
@@ -274,6 +286,9 @@
             padding: 40px 0;
             text-align: center;
         }
+        footer p {
+            padding: 0 16px;
+        }
 
         .small-note {
             font-size: 0.75rem;
@@ -281,19 +296,147 @@
             margin-top: 8px;
         }
 
+        /* ============================================================ */
+        /* 📱 MOBILE RESPONSIVENESS FIXES - Media Queries */
+        /* ============================================================ */
+
+        /* Tablets & smaller laptops */
+        @media (max-width: 1024px) {
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+            .contact-grid {
+                gap: 30px;
+                padding: 30px;
+            }
+        }
+
+        /* Mobile devices (phones) */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
-                gap: 16px;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+            .logo-area {
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                gap: 4px;
             }
             .nav-links a {
-                margin: 0 12px;
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+            .nav-links .btn-primary {
+                padding: 6px 16px;
+                font-size: 0.8rem;
+            }
+            .hero {
+                padding: 50px 0 40px;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+                padding: 0 16px;
+            }
+            .hero-badges {
+                gap: 12px;
+            }
+            .hero-badges span {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .course-header {
+                font-size: 1.2rem;
+                padding: 16px;
+            }
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .why-item {
+                padding: 20px 16px;
+            }
+            .why-item .emoji {
+                font-size: 2rem;
+            }
+            .why-item h3 {
+                font-size: 0.95rem;
+            }
+            .why-item p {
+                font-size: 0.8rem;
             }
             .contact-grid {
                 grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 24px;
+                border-radius: 20px;
             }
+            .contact-info p {
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+            }
+            input, textarea, select {
+                font-size: 0.95rem;
+                padding: 10px 14px;
+            }
+            footer p {
+                font-size: 0.8rem;
+            }
+            .contact-info iframe {
+                height: 150px;
+            }
+        }
+
+        /* Small phones (below 480px) */
+        @media (max-width: 480px) {
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.5rem;
+            }
+            .nav-links a {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+            }
+            .nav-links .btn-primary {
+                font-size: 0.7rem;
+                padding: 4px 12px;
+            }
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .why-item {
+                padding: 14px 10px;
+            }
+            .why-item .emoji {
+                font-size: 1.6rem;
+            }
+            .why-item h3 {
+                font-size: 0.8rem;
+            }
+            .why-item p {
+                font-size: 0.7rem;
+            }
+            .contact-grid {
+                padding: 16px;
+            }
+            .btn-primary {
+                padding: 8px 16px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -301,11 +444,10 @@
 <body>
 <header>
     <div class="nav-container">
-<div class="top-row">
-    <img src="new-logo.png" alt="Elite Hospitality Logo" style="height: 55px; width: auto;">
-    <div class="badge">⭐ ELITE HOSPITALITY ACADEMY ⭐</div>
-</div>
-                    <div class="brand-name">
+        <div class="logo-area">
+            <!-- Your new logo image -->
+            <img src="new-logo.png" alt="Elite Hospitality Logo">
+            <div class="brand-name">
                 <h1>ELITE HOSPITALITY</h1>
                 <p>academy of excellence</p>
             </div>
@@ -314,7 +456,8 @@
             <a href="#" class="active">Home</a>
             <a href="#courses">Courses</a>
             <a href="#contact">Contact</a>
-            <a href="#contact" class="btn-primary" style="padding: 8px 20px;">Enroll Now</a>
+            <!-- CHANGED: "Enroll Now" → "Apply now" -->
+            <a href="#contact" class="btn-primary">Apply now</a>
         </div>
     </div>
 </header>
@@ -325,7 +468,8 @@
         <div class="container">
             <h2>Launch Your Hospitality Career</h2>
             <p>Professional Training & Certification — 1‑Month intensive courses with 100% placement assistance</p>
-            <a href="#contact" class="btn-primary" style="background: #facc15; color:#1e3a5f;">Get Started</a>
+            <!-- CHANGED: "Enroll Now" → "Apply now" -->
+            <a href="#contact" class="btn-primary" style="background: #facc15; color:#1e3a5f;">Apply now</a>
             <div class="hero-badges">
                 <span>✔ Industry Experts</span>
                 <span>✔ Hands-on Labs</span>
@@ -432,7 +576,7 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title">Enroll Today – Limited Seats</h2>
+            <h2 class="section-title">Apply Today – Limited Seats</h2>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
@@ -446,8 +590,8 @@
                     </div>
                 </div>
                 <div>
-                    <!-- CORRECTED FORM: Standard HTML POST to Formspree (no JSON) -->
-                    <form action="https://formspree.io/f/xbdqaqoj" method="POST">
+                    <!-- Form with Formspree (replace YOUR_FORMSPREE_ID) -->
+                    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                         <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
                         <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
                         <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required></div>
@@ -461,11 +605,10 @@
                             </select>
                         </div>
                         <div class="form-group"><textarea name="message" rows="3" placeholder="Message"></textarea></div>
-                        <!-- Optional: Add subject line for email -->
                         <input type="hidden" name="_subject" value="New Inquiry - Elite Hospitality Website">
-                        <!-- Optional: redirect after submission (thank you page) -->
                         <input type="hidden" name="_next" value="https://www.elitehospitality.in.net/thanks.html">
-                        <button type="submit" class="btn-primary">Request Callback</button>
+                        <!-- CHANGED: "Request Callback" → "Apply now" -->
+                        <button type="submit" class="btn-primary">Apply now</button>
                     </form>
                     <p class="small-note">* We'll contact you within 24 hours.</p>
                 </div>
