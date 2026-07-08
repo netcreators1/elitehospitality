@@ -456,7 +456,6 @@
             <a href="#" class="active">Home</a>
             <a href="#courses">Courses</a>
             <a href="#contact">Contact</a>
-            <!-- CHANGED: "Enroll Now" → "Apply now" -->
             <a href="#contact" class="btn-primary">Apply now</a>
         </div>
     </div>
@@ -468,7 +467,6 @@
         <div class="container">
             <h2>Launch Your Hospitality Career</h2>
             <p>Professional Training & Certification — 1‑Month intensive courses with 100% placement assistance</p>
-            <!-- CHANGED: "Enroll Now" → "Apply now" -->
             <a href="#contact" class="btn-primary" style="background: #facc15; color:#1e3a5f;">Apply now</a>
             <div class="hero-badges">
                 <span>✔ Industry Experts</span>
@@ -591,23 +589,14 @@
                 </div>
                 <div>
                     <!-- Form with Formspree (replace YOUR_FORMSPREE_ID) -->
+                    <!-- COURSE DROPDOWN REMOVED COMPLETELY -->
                     <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                         <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
                         <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
                         <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number" required></div>
-                        <div class="form-group">
-                            <select name="course" required>
-                                <option value="">Select Course</option>
-                                <option>Front Office & Reception</option>
-                                <option>Professional Housekeeping</option>
-                                <option>Restaurant & F&B Team</option>
-                                <option>Operations Management</option>
-                            </select>
-                        </div>
-                        <div class="form-group"><textarea name="message" rows="3" placeholder="Message"></textarea></div>
+                        <div class="form-group"><textarea name="message" rows="3" placeholder="Your Message / Course Interest" required></textarea></div>
                         <input type="hidden" name="_subject" value="New Inquiry - Elite Hospitality Website">
                         <input type="hidden" name="_next" value="https://www.elitehospitality.in.net/thanks.html">
-                        <!-- CHANGED: "Request Callback" → "Apply now" -->
                         <button type="submit" class="btn-primary">Apply now</button>
                     </form>
                     <p class="small-note">* We'll contact you within 24 hours.</p>
