@@ -250,7 +250,98 @@
             margin-bottom: 16px;
         }
 
+        /* ============================================================ */
+        /* JOBS SECTION - NEW */
+        /* ============================================================ */
+        #jobs {
+            background: #f1f5f9;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .job-location-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-top: 5px solid #facc15;
+        }
+        .job-location-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .job-location-header {
+            background: #1e3a5f;
+            color: white;
+            padding: 18px 20px;
+        }
+        .job-location-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .job-location-header .job-code {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .job-list {
+            padding: 20px;
+        }
+
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .job-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-role {
+            font-weight: 600;
+            color: #1e3a5f;
+            font-size: 0.95rem;
+        }
+
+        .job-salary {
+            font-size: 0.85rem;
+            color: #c2410c;
+            font-weight: 700;
+            background: #fef3c7;
+            padding: 2px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .job-perks {
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #e6f7e6;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0b5e0b;
+            display: inline-block;
+        }
+
+        .job-note {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* ============================================================ */
         /* Contact Form */
+        /* ============================================================ */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -300,7 +391,6 @@
         /* 📱 MOBILE RESPONSIVENESS FIXES - Media Queries */
         /* ============================================================ */
 
-        /* Tablets & smaller laptops */
         @media (max-width: 1024px) {
             .hero h2 {
                 font-size: 2.4rem;
@@ -311,7 +401,6 @@
             }
         }
 
-        /* Mobile devices (phones) */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -400,9 +489,21 @@
             .contact-info iframe {
                 height: 150px;
             }
+
+            /* Jobs mobile */
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+            .job-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .job-salary {
+                white-space: normal;
+            }
         }
 
-        /* Small phones (below 480px) */
         @media (max-width: 480px) {
             .hero h2 {
                 font-size: 1.5rem;
@@ -438,6 +539,9 @@
                 padding: 8px 16px;
                 font-size: 0.85rem;
             }
+            .job-location-header h3 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -455,6 +559,7 @@
         <div class="nav-links">
             <a href="#" class="active">Home</a>
             <a href="#courses">Courses</a>
+            <a href="#jobs">Jobs</a>
             <a href="#contact">Contact</a>
             <a href="#contact" class="btn-primary">Apply now</a>
         </div>
@@ -556,6 +661,79 @@
         </div>
     </section>
 
+    <!-- ============================================================ -->
+    <!-- JOBS SECTION - NEW -->
+    <!-- ============================================================ -->
+    <section id="jobs">
+        <div class="container">
+            <h2 class="section-title">💼 Current Job Openings</h2>
+            <div class="jobs-grid">
+
+                <!-- Hotel 1: Igatpuri -->
+                <div class="job-location-card">
+                    <div class="job-location-header">
+                        <h3>📍 Igatpuri <span class="job-code">(Code: 4224031)</span></h3>
+                    </div>
+                    <div class="job-list">
+                        <div class="job-item"><span class="job-role">🧹 Housekeeping Guys</span><span class="job-salary">₹10K – 12K</span></div>
+                        <div class="job-item"><span class="job-role">🍽️ Restaurant Ops</span><span class="job-salary">₹10K – 12K</span></div>
+                        <div class="job-item"><span class="job-role">🏨 Front Office</span><span class="job-salary">₹10K – 12K</span></div>
+                        <div class="job-perks">✅ 4 Weekly Off | 🍽️ Food + Accommodation</div>
+                        <div class="job-note">Total Positions: 23</div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2: Jalna -->
+                <div class="job-location-card">
+                    <div class="job-location-header">
+                        <h3>📍 Jalna <span class="job-code">(Code: 4312031)</span></h3>
+                    </div>
+                    <div class="job-list">
+                        <div class="job-item"><span class="job-role">🧹 Housekeeping Guys</span><span class="job-salary">₹13K</span></div>
+                        <div class="job-item"><span class="job-role">👔 Supervisor</span><span class="job-salary">₹13K</span></div>
+                        <div class="job-item"><span class="job-role">👩‍💼 Front Desk (Female)</span><span class="job-salary">₹18K</span></div>
+                        <div class="job-perks">✅ 2 Weekly Off | 🍽️ Food + Accommodation</div>
+                        <div class="job-note">Total Positions: 7</div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3: Nashik -->
+                <div class="job-location-card">
+                    <div class="job-location-header">
+                        <h3>📍 Nashik <span class="job-code">(Code: 4220011)</span></h3>
+                    </div>
+                    <div class="job-list">
+                        <div class="job-item"><span class="job-role">🧹 Housekeeping / Restaurant Guys</span><span class="job-salary">₹10K – 12K</span></div>
+                        <div class="job-perks">✅ 4 Weekly Off | 🍽️ Food + Accommodation</div>
+                        <div class="job-note">Total Positions: 5</div>
+                    </div>
+                </div>
+
+                <!-- Hotel 4: Bhiwandi -->
+                <div class="job-location-card">
+                    <div class="job-location-header">
+                        <h3>📍 Bhiwandi, Mumbai <span class="job-code">(Code: 4213081)</span></h3>
+                    </div>
+                    <div class="job-list">
+                        <div class="job-item"><span class="job-role">🍽️ Stewards</span><span class="job-salary">₹12K – 13K</span></div>
+                        <div class="job-item"><span class="job-role">👔 Captains</span><span class="job-salary">₹13K – 15K</span></div>
+                        <div class="job-item"><span class="job-role">🏨 FO Assistant</span><span class="job-salary">₹12K – 13K</span></div>
+                        <div class="job-item"><span class="job-role">🧹 HK Room Boys</span><span class="job-salary">₹12K – 13K</span></div>
+                        <div class="job-item"><span class="job-role">👨‍🍳 Indian Chef</span><span class="job-salary">₹15K – 20K</span></div>
+                        <div class="job-item"><span class="job-role">👨‍🍳 Indian Assistant</span><span class="job-salary">₹12K – 13K</span></div>
+                        <div class="job-item"><span class="job-role">🔥 Tandoor Chef</span><span class="job-salary">₹15K – 20K</span></div>
+                        <div class="job-item"><span class="job-role">🍽️ Pantry Assistants</span><span class="job-salary">₹12K – 13K</span></div>
+                        <div class="job-item"><span class="job-role">🛡️ Security Guard</span><span class="job-salary">₹12K</span></div>
+                        <div class="job-item"><span class="job-role">🔧 Utility</span><span class="job-salary">₹12K – 13K</span></div>
+                        <div class="job-perks">🍽️ Food + Accommodation</div>
+                        <div class="job-note">Total Positions: 20</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Why Us -->
     <section style="background: #f1f5f9;">
         <div class="container">
@@ -588,8 +766,7 @@
                     </div>
                 </div>
                 <div>
-                    <!-- Form with Formspree (replace YOUR_FORMSPREE_ID) -->
-                    <!-- COURSE DROPDOWN REMOVED COMPLETELY -->
+                    <!-- REPLACE YOUR_FORMSPREE_ID with your actual Formspree ID -->
                     <form action="https://formspree.io/f/xrewvjgz" method="POST">
                         <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
                         <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
