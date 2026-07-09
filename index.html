@@ -150,11 +150,11 @@
         }
 
         /* ============================================================ */
-        /* CATEGORY ROW – FORCED SINGLE ROW (aggressive compact) */
+        /* CATEGORY ROW – SINGLE ROW */
         /* ============================================================ */
         .row-titles-section {
             background: white;
-            padding: 12px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
@@ -162,7 +162,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
+            gap: 20px;
             flex-wrap: nowrap;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
@@ -172,8 +172,8 @@
             text-decoration: none;
             color: #1e3a5f;
             font-weight: 700;
-            font-size: 0.95rem;
-            padding: 6px 16px;
+            font-size: 1rem;
+            padding: 8px 20px;
             border-radius: 40px;
             background: #f8fafc;
             border: 1.5px solid #e2e8f0;
@@ -189,7 +189,6 @@
             box-shadow: 0 4px 12px rgba(250,204,21,0.3);
         }
 
-        /* Tablet */
         @media (max-width: 600px) {
             .row-titles a {
                 font-size: 0.7rem;
@@ -199,7 +198,6 @@
                 gap: 8px;
             }
         }
-        /* Very small phones */
         @media (max-width: 400px) {
             .row-titles a {
                 font-size: 0.55rem;
@@ -207,37 +205,41 @@
             }
             .row-titles {
                 gap: 4px;
-                justify-content: flex-start; /* allow scroll */
+                justify-content: flex-start;
             }
         }
 
-        /* Section */
-        section {
-            padding: 70px 0;
+        /* ============================================================ */
+        /* COURSE CARDS – FORCED SINGLE ROW */
+        /* ============================================================ */
+        .courses-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 24px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 8px 0;
+            scrollbar-width: thin;
         }
-        .section-title {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 48px;
-            color: #1e3a5f;
-            position: relative;
+        .courses-grid .course-card {
+            flex: 0 0 auto;
+            width: 260px; /* fixed width for each card */
+            min-width: 200px;
         }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #facc15;
-            margin: 12px auto 0;
-            border-radius: 4px;
+        /* On smaller screens, allow cards to shrink a bit */
+        @media (max-width: 768px) {
+            .courses-grid .course-card {
+                width: 220px;
+                min-width: 160px;
+            }
+        }
+        @media (max-width: 480px) {
+            .courses-grid .course-card {
+                width: 180px;
+                min-width: 140px;
+            }
         }
 
-        /* Course Cards Grid */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-        }
         .course-card {
             background: white;
             border-radius: 24px;
@@ -252,22 +254,24 @@
             background: #1e3a5f;
             color: white;
             padding: 20px;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 700;
+            text-align: center;
         }
         .course-content {
-            padding: 20px;
+            padding: 16px;
         }
         .week-toggle {
             background: #f1f5f9;
             border-radius: 12px;
-            margin: 12px 0;
+            margin: 10px 0;
             cursor: pointer;
-            padding: 12px;
+            padding: 10px 12px;
             font-weight: 700;
             display: flex;
             justify-content: space-between;
             transition: 0.2s;
+            font-size: 0.85rem;
         }
         .week-toggle:hover {
             background: #e2e8f0;
@@ -275,13 +279,13 @@
         .week-details {
             display: none;
             padding-left: 16px;
-            margin-top: 8px;
+            margin-top: 6px;
             list-style: none;
         }
         .week-details li {
-            padding: 6px 0 6px 20px;
+            padding: 4px 0 4px 20px;
             position: relative;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         .week-details li::before {
             content: "✓";
@@ -490,14 +494,6 @@
                 font-size: 0.75rem;
                 padding: 4px 12px;
             }
-            .courses-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .course-header {
-                font-size: 1.2rem;
-                padding: 16px;
-            }
             .jobs-grid {
                 grid-template-columns: 1fr;
             }
@@ -626,7 +622,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- CATEGORY ROW – FORCED SINGLE ROW (no wrap) -->
+    <!-- CATEGORY ROW – RESTORED (Our Courses | Jobs | Why Us) -->
     <!-- ============================================================ -->
     <section class="row-titles-section">
         <div class="container">
@@ -638,7 +634,9 @@
         </div>
     </section>
 
-    <!-- Courses Section -->
+    <!-- ============================================================ -->
+    <!-- COURSES – NOW IN A SINGLE HORIZONTAL ROW (with scroll) -->
+    <!-- ============================================================ -->
     <section id="courses">
         <div class="container">
             <div class="courses-grid">
