@@ -150,11 +150,11 @@
         }
 
         /* ============================================================ */
-        /* ROW TITLES – FORCED SINGLE ROW */
+        /* CATEGORY ROW – FORCED SINGLE ROW (no wrap ever) */
         /* ============================================================ */
         .row-titles-section {
             background: white;
-            padding: 20px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
@@ -162,20 +162,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: nowrap; /* FORCE SINGLE ROW */
+            overflow-x: auto;  /* scroll on very tiny screens if needed */
+            -webkit-overflow-scrolling: touch;
+            padding: 4px 0;
         }
         .row-titles a {
             text-decoration: none;
             color: #1e3a5f;
             font-weight: 700;
-            font-size: 1.05rem;
-            padding: 10px 22px;
+            font-size: 1rem;
+            padding: 8px 20px;
             border-radius: 40px;
             transition: 0.3s;
             background: #f8fafc;
             border: 1.5px solid #e2e8f0;
             white-space: nowrap; /* PREVENT TEXT WRAPPING INSIDE */
+            flex-shrink: 0;      /* PREVENT BUTTONS FROM SHRINKING */
         }
         .row-titles a:hover {
             background: #facc15;
@@ -188,11 +192,11 @@
         /* Tablet */
         @media (max-width: 768px) {
             .row-titles {
-                gap: 12px;
+                gap: 10px;
             }
             .row-titles a {
                 font-size: 0.75rem;
-                padding: 6px 12px;
+                padding: 6px 14px;
                 white-space: nowrap;
             }
         }
@@ -200,11 +204,13 @@
         /* Mobile */
         @media (max-width: 480px) {
             .row-titles {
-                gap: 8px;
+                gap: 6px;
+                justify-content: flex-start;
+                padding: 4px 8px;
             }
             .row-titles a {
                 font-size: 0.6rem;
-                padding: 4px 8px;
+                padding: 4px 10px;
                 white-space: nowrap;
             }
         }
@@ -624,7 +630,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- CATEGORY ROW – FORCED INTO ONE SINGLE ROW (no wrapping) -->
+    <!-- CATEGORY ROW – FORCED SINGLE ROW (no wrapping) -->
     <!-- ============================================================ -->
     <section class="row-titles-section">
         <div class="container">
