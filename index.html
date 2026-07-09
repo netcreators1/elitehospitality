@@ -210,6 +210,26 @@
         }
 
         /* ============================================================ */
+        /* SECTION TITLES (Heading style) */
+        /* ============================================================ */
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 48px;
+            color: #1e3a5f;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #facc15;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        /* ============================================================ */
         /* COURSE CARDS – FORCED SINGLE ROW */
         /* ============================================================ */
         .courses-grid {
@@ -298,77 +318,8 @@
         }
 
         /* ============================================================ */
-        /* WHY US – FORCED SINGLE ROW */
+        /* JOBS SECTION */
         /* ============================================================ */
-        #why-us {
-            background: #f1f5f9;
-        }
-        .why-grid {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 20px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            padding: 8px 0;
-            scrollbar-width: thin;
-        }
-        .why-item {
-            flex: 0 0 auto;
-            width: 180px;
-            min-width: 140px;
-            background: white;
-            padding: 20px 12px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .why-item .emoji {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .why-item h3 {
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-        }
-        .why-item p {
-            font-size: 0.8rem;
-            color: #475569;
-        }
-
-        @media (max-width: 768px) {
-            .why-item {
-                width: 150px;
-                min-width: 120px;
-                padding: 16px 10px;
-            }
-            .why-item .emoji {
-                font-size: 1.6rem;
-            }
-            .why-item h3 {
-                font-size: 0.8rem;
-            }
-            .why-item p {
-                font-size: 0.7rem;
-            }
-        }
-        @media (max-width: 480px) {
-            .why-item {
-                width: 120px;
-                min-width: 100px;
-                padding: 12px 8px;
-            }
-            .why-item .emoji {
-                font-size: 1.4rem;
-            }
-            .why-item h3 {
-                font-size: 0.7rem;
-            }
-            .why-item p {
-                font-size: 0.6rem;
-            }
-        }
-
-        /* Jobs Section */
         #jobs {
             background: #f1f5f9;
         }
@@ -444,6 +395,77 @@
             color: #64748b;
             margin-top: 8px;
             font-style: italic;
+        }
+
+        /* ============================================================ */
+        /* WHY US – FORCED SINGLE ROW */
+        /* ============================================================ */
+        #why-us {
+            background: #f1f5f9;
+        }
+        .why-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 8px 0;
+            scrollbar-width: thin;
+        }
+        .why-item {
+            flex: 0 0 auto;
+            width: 180px;
+            min-width: 140px;
+            background: white;
+            padding: 20px 12px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .why-item .emoji {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .why-item h3 {
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+        .why-item p {
+            font-size: 0.8rem;
+            color: #475569;
+        }
+
+        @media (max-width: 768px) {
+            .why-item {
+                width: 150px;
+                min-width: 120px;
+                padding: 16px 10px;
+            }
+            .why-item .emoji {
+                font-size: 1.6rem;
+            }
+            .why-item h3 {
+                font-size: 0.8rem;
+            }
+            .why-item p {
+                font-size: 0.7rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .why-item {
+                width: 120px;
+                min-width: 100px;
+                padding: 12px 8px;
+            }
+            .why-item .emoji {
+                font-size: 1.4rem;
+            }
+            .why-item h3 {
+                font-size: 0.7rem;
+            }
+            .why-item p {
+                font-size: 0.6rem;
+            }
         }
 
         /* Contact Form */
@@ -639,7 +661,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- CATEGORY ROW – RESTORED (Our Courses | Jobs | Why Us) -->
+    <!-- CATEGORY ROW – (Our Courses | Jobs | Why Us) -->
     <!-- ============================================================ -->
     <section class="row-titles-section">
         <div class="container">
@@ -652,10 +674,11 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- COURSES – SINGLE HORIZONTAL ROW -->
+    <!-- COURSES SECTION – HEADING + SINGLE ROW -->
     <!-- ============================================================ -->
     <section id="courses">
         <div class="container">
+            <h2 class="section-title">Our 1‑Month Professional Courses</h2>
             <div class="courses-grid">
                 <!-- Front Office -->
                 <div class="course-card">
@@ -731,9 +754,12 @@
         </div>
     </section>
 
-    <!-- Jobs Section -->
+    <!-- ============================================================ -->
+    <!-- JOBS SECTION – HEADING + GRID -->
+    <!-- ============================================================ -->
     <section id="jobs">
         <div class="container">
+            <h2 class="section-title">Current Job Openings</h2>
             <div class="jobs-grid">
 
                 <!-- Hotel 1: Igatpuri -->
@@ -802,7 +828,7 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- WHY US – HEADER RESTORED + SINGLE ROW -->
+    <!-- WHY US SECTION – HEADER + SINGLE ROW -->
     <!-- ============================================================ -->
     <section id="why-us">
         <div class="container">
