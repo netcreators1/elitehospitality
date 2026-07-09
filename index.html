@@ -149,6 +149,66 @@
             font-size: 0.9rem;
         }
 
+        /* ============================================================ */
+        /* ROW TITLES – FORCED SINGLE ROW */
+        /* ============================================================ */
+        .row-titles-section {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .row-titles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: nowrap; /* FORCE SINGLE ROW */
+        }
+        .row-titles a {
+            text-decoration: none;
+            color: #1e3a5f;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 10px 22px;
+            border-radius: 40px;
+            transition: 0.3s;
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            white-space: nowrap; /* PREVENT TEXT WRAPPING INSIDE */
+        }
+        .row-titles a:hover {
+            background: #facc15;
+            color: #1e3a5f;
+            border-color: #facc15;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(250,204,21,0.3);
+        }
+
+        /* Tablet */
+        @media (max-width: 768px) {
+            .row-titles {
+                gap: 12px;
+            }
+            .row-titles a {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+                white-space: nowrap;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .row-titles {
+                gap: 8px;
+            }
+            .row-titles a {
+                font-size: 0.6rem;
+                padding: 4px 8px;
+                white-space: nowrap;
+            }
+        }
+
         /* Section */
         section {
             padding: 70px 0;
@@ -232,7 +292,88 @@
             display: block;
         }
 
+        /* Jobs Section */
+        #jobs {
+            background: #f1f5f9;
+        }
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .job-location-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-top: 5px solid #facc15;
+        }
+        .job-location-card:hover {
+            transform: translateY(-5px);
+        }
+        .job-location-header {
+            background: #1e3a5f;
+            color: white;
+            padding: 18px 20px;
+        }
+        .job-location-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .job-location-header .job-code {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        .job-list {
+            padding: 20px;
+        }
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .job-item:last-child {
+            border-bottom: none;
+        }
+        .job-role {
+            font-weight: 600;
+            color: #1e3a5f;
+            font-size: 0.95rem;
+        }
+        .job-salary {
+            font-size: 0.85rem;
+            color: #c2410c;
+            font-weight: 700;
+            background: #fef3c7;
+            padding: 2px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .job-perks {
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #e6f7e6;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0b5e0b;
+            display: inline-block;
+        }
+        .job-note {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
         /* Why Us */
+        #why-us {
+            background: #f1f5f9;
+        }
         .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -250,98 +391,7 @@
             margin-bottom: 16px;
         }
 
-        /* ============================================================ */
-        /* JOBS SECTION - NEW */
-        /* ============================================================ */
-        #jobs {
-            background: #f1f5f9;
-        }
-
-        .jobs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .job-location-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border-top: 5px solid #facc15;
-        }
-        .job-location-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .job-location-header {
-            background: #1e3a5f;
-            color: white;
-            padding: 18px 20px;
-        }
-        .job-location-header h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        .job-location-header .job-code {
-            font-size: 0.8rem;
-            opacity: 0.8;
-            font-weight: 400;
-        }
-
-        .job-list {
-            padding: 20px;
-        }
-
-        .job-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .job-item:last-child {
-            border-bottom: none;
-        }
-
-        .job-role {
-            font-weight: 600;
-            color: #1e3a5f;
-            font-size: 0.95rem;
-        }
-
-        .job-salary {
-            font-size: 0.85rem;
-            color: #c2410c;
-            font-weight: 700;
-            background: #fef3c7;
-            padding: 2px 12px;
-            border-radius: 20px;
-            white-space: nowrap;
-        }
-
-        .job-perks {
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: #e6f7e6;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #0b5e0b;
-            display: inline-block;
-        }
-
-        .job-note {
-            font-size: 0.75rem;
-            color: #64748b;
-            margin-top: 8px;
-            font-style: italic;
-        }
-
-        /* ============================================================ */
         /* Contact Form */
-        /* ============================================================ */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -387,10 +437,7 @@
             margin-top: 8px;
         }
 
-        /* ============================================================ */
-        /* 📱 MOBILE RESPONSIVENESS FIXES - Media Queries */
-        /* ============================================================ */
-
+        /* Mobile Responsiveness */
         @media (max-width: 1024px) {
             .hero h2 {
                 font-size: 2.4rem;
@@ -441,10 +488,6 @@
                 font-size: 0.75rem;
                 padding: 4px 12px;
             }
-            .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 30px;
-            }
             .courses-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -452,6 +495,17 @@
             .course-header {
                 font-size: 1.2rem;
                 padding: 16px;
+            }
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+            .job-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .job-salary {
+                white-space: normal;
             }
             .why-grid {
                 grid-template-columns: 1fr 1fr;
@@ -488,19 +542,6 @@
             }
             .contact-info iframe {
                 height: 150px;
-            }
-
-            /* Jobs mobile */
-            .jobs-grid {
-                grid-template-columns: 1fr;
-            }
-            .job-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-            .job-salary {
-                white-space: normal;
             }
         }
 
@@ -582,10 +623,22 @@
         </div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- CATEGORY ROW – FORCED INTO ONE SINGLE ROW (no wrapping) -->
+    <!-- ============================================================ -->
+    <section class="row-titles-section">
+        <div class="container">
+            <div class="row-titles">
+                <a href="#courses">📚 Our 1‑Month Professional Courses</a>
+                <a href="#jobs">💼 Current Job Openings</a>
+                <a href="#why-us">🏆 Why Train With Us?</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Courses Section -->
     <section id="courses">
         <div class="container">
-            <h2 class="section-title">Our 1‑Month Professional Courses</h2>
             <div class="courses-grid">
                 <!-- Front Office -->
                 <div class="course-card">
@@ -661,12 +714,9 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- JOBS SECTION - NEW -->
-    <!-- ============================================================ -->
+    <!-- Jobs Section -->
     <section id="jobs">
         <div class="container">
-            <h2 class="section-title">💼 Current Job Openings</h2>
             <div class="jobs-grid">
 
                 <!-- Hotel 1: Igatpuri -->
@@ -734,10 +784,9 @@
         </div>
     </section>
 
-    <!-- Why Us -->
-    <section style="background: #f1f5f9;">
+    <!-- Why Us Section -->
+    <section id="why-us">
         <div class="container">
-            <h2 class="section-title">Why Train With Us?</h2>
             <div class="why-grid">
                 <div class="why-item"><div class="emoji">🏆</div><h3>Industry Experts</h3><p>10+ years experience</p></div>
                 <div class="why-item"><div class="emoji">🛠️</div><h3>Hands-on Practical</h3><p>Simulated hotel labs</p></div>
